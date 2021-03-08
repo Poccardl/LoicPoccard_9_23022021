@@ -57,7 +57,7 @@ describe('Given I am connected as an Admin', () => {
 
       const dashboard = new Dashboard({
         document, onNavigate, firestore: null, bills, localStorage: window.localStorage
-      })          
+      })
       const html = DashboardUI({ data: bills })
    
       document.body.innerHTML = html
@@ -101,7 +101,7 @@ describe('Given I am connected as an Admin', () => {
         document, onNavigate, firestore, bills, localStorage: window.localStorage
       })
 
-      const handleEditTicket = jest.fn((e) => dashboard.handleEditTicket(e, bills[0], bills))   
+      const handleEditTicket = jest.fn((e) => dashboard.handleEditTicket(e, bills[0], bills))
       const iconEdit = screen.getByTestId('open-bill47qAXb6fIm2zOKkLzMro')
       iconEdit.addEventListener('click', handleEditTicket)
       userEvent.click(iconEdit)

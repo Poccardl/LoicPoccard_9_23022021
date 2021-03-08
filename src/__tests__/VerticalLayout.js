@@ -15,5 +15,4 @@ describe('Given I am connected as Employee', () => {
     expect(screen.getByTestId('icon-window')).toBeTruthy()
     expect(screen.getByTestId('icon-mail')).toBeTruthy()
   })
-
 })

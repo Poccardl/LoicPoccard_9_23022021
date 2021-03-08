@@ -87,7 +87,7 @@ export default class {
 
   handleEditTicket(e, bill, bills) {
     this.counter = 0
-    this.id = bill.id
+    this.id = bill.id // TODO: modif code
     if (this.counter % 2 === 0) {
       bills.forEach(b => {
         $(`#open-bill${b.id}`).css({ background: '#0D5AE5' })

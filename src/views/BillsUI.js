@@ -16,7 +16,7 @@ const row = (bill) => {
         ${Actions(bill.fileUrl)}
       </td>
     </tr>
-    `) // TODO: correction here -> ${Actions(bill.fileUrl)}
+    `)
   }
 
 const rows = (data) => {

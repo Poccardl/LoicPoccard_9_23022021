@@ -20,6 +20,7 @@ const row = (bill) => {
   }
 
 const rows = (data) => {
+  // CORRECTION : [Bug report]
   data = Toolbox.sortDateOnBillsTab(data)
   return (data && data.length) ? data.map(bill => row(bill)).join("") : ""
 }

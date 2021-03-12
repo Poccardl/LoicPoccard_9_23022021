@@ -86,25 +86,14 @@ export default class {
   }
 
   handleEditTicket(e, bill, bills) {
-    this.counter = 0
-    this.id = bill.id // TODO: modif code
-    if (this.counter % 2 === 0) {
-      bills.forEach(b => {
-        $(`#open-bill${b.id}`).css({ background: '#0D5AE5' })
-      })
-      $(`#open-bill${bill.id}`).css({ background: '#2A2B35' })
-      $('.dashboard-right-container div').html(DashboardFormUI(bill))
-      $('.vertical-navbar').css({ height: '150vh' })
-      this.counter ++
-    } else {
-      $(`#open-bill${bill.id}`).css({ background: '#0D5AE5' })
-
-      $('.dashboard-right-container div').html(`
-        <div id="big-billed-icon"> ${BigBilledIcon} </div>
-      `)
-      $('.vertical-navbar').css({ height: '120vh' })
-      this.counter ++
-    }
+    // CORRECTION : [Bug Hunt] - Dashboard
+    this.id = bill.id
+    bills.forEach(b => {
+      $(`#open-bill${b.id}`).css({ background: '#0D5AE5' })
+    })
+    $(`#open-bill${bill.id}`).css({ background: '#2A2B35' })
+    $('.dashboard-right-container div').html(DashboardFormUI(bill))
+    $('.vertical-navbar').css({ height: '150vh' })
     $('#icon-eye-d').click(this.handleClickIconEye)
     $('#btn-accept-bill').click((e) => this.handleAcceptSubmit(e, bill))
     $('#btn-refuse-bill').click((e) => this.handleRefuseSubmit(e, bill))

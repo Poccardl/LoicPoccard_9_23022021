@@ -61,10 +61,6 @@ describe("Given I am connected as an employee", () => {
   })
   describe('When I click on the Create a new bill button', () => {
 		test('Then I should be sent to the NewBill page', () => {
-			Object.defineProperty(window, 'localStorage', {
-				value: localStorageMock,
-			})
-			window.localStorage.setItem('user', JSON.stringify({ type: 'Employee' }))
 			const html = BillsUI({ data: [] })
 			document.body.innerHTML = html
 			const onNavigate = (pathname) => {
@@ -82,10 +78,6 @@ describe("Given I am connected as an employee", () => {
 	})
 	describe('When I click on the Eye Icon button', () => {
 		test('Then a modal should open', async () => {
-			Object.defineProperty(window, 'localStorage', {
-				value: localStorageMock,
-			})
-			window.localStorage.setItem('user', JSON.stringify({ type: 'Employee' }))
 			const html = BillsUI({ data: bills })
 			document.body.innerHTML = html
 			const onNavigate = (pathname) => {

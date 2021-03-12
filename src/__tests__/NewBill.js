@@ -1,11 +1,9 @@
 import { fireEvent, screen } from "@testing-library/dom"
-import userEvent from '@testing-library/user-event'
 import NewBillUI from "../views/NewBillUI.js"
 import NewBill from "../containers/NewBill.js"
 import { localStorageMock } from "../__mocks__/localStorage.js"
 import firebase from "../__mocks__/firebase"
 import { ROUTES } from "../constants/routes"
-import Router from "../app/Router.js"
 
 describe("Given I am connected as an employee", () => {
 	describe("When I am on NewBill Page", () => {
@@ -56,9 +54,8 @@ describe("Given I am connected as an employee", () => {
 			submitNewBill.addEventListener("submit", handleSubmit)
 			fireEvent.submit(submitNewBill)
 			expect(handleSubmit).toHaveBeenCalled()
-			//expect(screen.getAllByText('Mes notes de frais')).toBeTruthy()
 		})
-		// POST
+		// test d'intégration POST
 		describe("Given I am a user connected as an Employee", () => {
 			describe("When I submit new bill", () => {
 				test("POST bill to mock API", async () => {

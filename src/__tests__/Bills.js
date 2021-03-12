@@ -2,8 +2,6 @@ import { fireEvent, screen } from "@testing-library/dom"
 import BillsUI from "../views/BillsUI.js"
 import { bills } from "../fixtures/bills.js"
 import '@testing-library/jest-dom/extend-expect'
-
-import { localStorageMock } from "../__mocks__/localStorage.js"
 import Bills  from "../containers/Bills.js"
 import { ROUTES } from "../constants/routes"
 import firebase from "../__mocks__/firebase"
@@ -72,8 +70,6 @@ describe("Given I am connected as an employee", () => {
 			button.addEventListener('click', handleClickNewBill)
 			fireEvent.click(button)
 			expect(handleClickNewBill).toHaveBeenCalled()
-			// const newBillForm = screen.getByTestId('form-new-bill')
-			// expect(newBillForm).toBeTruthy()
 		})
 	})
 	describe('When I click on the Eye Icon button', () => {

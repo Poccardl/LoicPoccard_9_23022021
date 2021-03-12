@@ -13,6 +13,7 @@ describe("Given I am connected as an employee", () => {
       document.body.innerHTML = html
       //to-do write expect expression
     })
+	// test si les dates sont bien trier dans l'odre décroissant
     test("Then bills should be ordered from earliest to latest", () => {
       const html = BillsUI({ data: bills })
       document.body.innerHTML = html
@@ -21,11 +22,13 @@ describe("Given I am connected as an employee", () => {
       const datesSorted = [...dates].sort(antiChrono)
       expect(dates).toEqual(datesSorted)
     })
+	// test loading page
     test('Then, Loading page should be rendered', () => {
       const html = BillsUI({ loading: true })
       document.body.innerHTML = html
       expect(screen.getAllByText('Loading...')).toBeTruthy()
     })
+	// test error page
     test('Then, Error page should be rendered', () => {
       const html = BillsUI({ error: 'some error message' })
       document.body.innerHTML = html
@@ -57,6 +60,7 @@ describe("Given I am connected as an employee", () => {
 		expect(message).toBeTruthy()
 	})
   })
+  // test click on new bill button
   describe('When I click on the Create a new bill button', () => {
 		test('Then I should be sent to the NewBill page', () => {
 			const html = BillsUI({ data: [] })
@@ -72,6 +76,7 @@ describe("Given I am connected as an employee", () => {
 			expect(handleClickNewBill).toHaveBeenCalled()
 		})
 	})
+	// test click on eye button
 	describe('When I click on the Eye Icon button', () => {
 		test('Then a modal should open', async () => {
 			const html = BillsUI({ data: bills })

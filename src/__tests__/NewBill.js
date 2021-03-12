@@ -12,7 +12,8 @@ describe("Given I am connected as an employee", () => {
 			document.body.innerHTML = html
 			//to-do write assertion
 		})
-		test("Test handleChangeFile", () => {
+		// test handleChangeFile
+		test("cover handleChangeFile method", () => {
 			const html = NewBillUI()
 			document.body.innerHTML = html
 
@@ -34,7 +35,8 @@ describe("Given I am connected as an employee", () => {
 			fireEvent.input(input_file, file)
 			expect(handleChangeFile).toHaveBeenCalled()
 		})
-		test("Test handleSubmit", () => {
+		// test handleSubmit
+		test("cover handleSubmit method", () => {
 			const html = NewBillUI()
 			document.body.innerHTML = html
 

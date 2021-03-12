@@ -45,7 +45,7 @@ describe('Given I am connected as an Admin', () => {
 
   describe('When I am on Dashboard page and I click on arrow', () => {
     test('Then, tickets list should be unfolding, and cars should contain first and lastname', async () => {
-      
+
       const onNavigate = (pathname) => {
         document.body.innerHTML = ROUTES({ pathname })
       }
@@ -59,12 +59,11 @@ describe('Given I am connected as an Admin', () => {
         document, onNavigate, firestore: null, bills, localStorage: window.localStorage
       })
       const html = DashboardUI({ data: bills })
-   
       document.body.innerHTML = html
 
-      const handleShowTickets1 = jest.fn((e) => dashboard.handleShowTickets(e, bills, 1)) 
-      const handleShowTickets2 = jest.fn((e) => dashboard.handleShowTickets(e, bills, 2))    
-      const handleShowTickets3 = jest.fn((e) => dashboard.handleShowTickets(e, bills, 3))    
+      const handleShowTickets1 = jest.fn((e) => dashboard.handleShowTickets(e, bills, 1))
+      const handleShowTickets2 = jest.fn((e) => dashboard.handleShowTickets(e, bills, 2))
+      const handleShowTickets3 = jest.fn((e) => dashboard.handleShowTickets(e, bills, 3))
 
       const icon1 = screen.getByTestId('arrow-icon1')
       const icon2 = screen.getByTestId('arrow-icon2')

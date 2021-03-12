@@ -77,7 +77,7 @@ export default class Login {
       .doc(user.email)
       .set({
         type: user.type,
-        name: user.email.split('@')[0] 
+        name: user.email.split('@')[0]
       })
       .then(() => console.log(`User with ${user.email} is created`))
       .catch(error => error)

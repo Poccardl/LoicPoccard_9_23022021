@@ -59,7 +59,7 @@ export default () => {
       })
     }
   }
-  
+
   window.onpopstate = (e) => {
     const user = JSON.parse(localStorage.getItem('user'))
     if (window.location.pathname === "/" && !user) {
@@ -113,4 +113,3 @@ export default () => {
 
   return null
 }
- 

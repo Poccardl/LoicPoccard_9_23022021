@@ -24,7 +24,7 @@ export default (height) => {
           </div>
       </div>
         `
-      ) 
+      )
     } else {
       return (
         `
